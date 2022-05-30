@@ -11,7 +11,7 @@ namespace JobSearch.Domain.Models
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(6)]
+        [MinLength(6)]
         public string Name { get; set; }
 
         [Required]
@@ -19,7 +19,7 @@ namespace JobSearch.Domain.Models
         public string Email { get; set; }
 
         [Required]
-        [MaxLength(6)]
+        [MinLength(6)]
         public string Password { get; set; }
     }
 }

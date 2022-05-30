@@ -26,12 +26,12 @@ namespace JobSearch.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<JobSearchContext>(options => {
-                
-                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")); 
+
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
                 /* ("Data Source=DataBase\\JobSearch.db")
                 DataBase(nome da pasta) \\(contrabarra 2x) JobSearch.db(nome do arquivo)*/
             });
-            services.AddRazorPages();
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +49,6 @@ namespace JobSearch.API
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
 
             app.UseRouting();
 
@@ -57,7 +56,7 @@ namespace JobSearch.API
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }

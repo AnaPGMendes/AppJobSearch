@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JobSearch.App.Views.Start">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid ColumnSpacing="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Text="Jobsearch" Style="{StaticResource Title}"/>
+                <Button Grid.Column="1" ImageSource="logout.png" Clicked="Logout"/>
+                <Button Grid.Column="2" Text="+ Add Job" Clicked="btGoRegisterJob"/>
+            </Grid>
+            <BoxView Color="{StaticResource LightPurple}" HeightRequest="1" />
+            <Grid Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" StyleClass="InputViewFrame">
+                    <StackLayout Orientation="Horizontal">
+                        <ImageButton Source="{OnPlatform UWP='Images/search.png', Android='search.png', iOS='search.png'}"
+                                     Clicked="FocusPesquisa"/>
+                        <Entry Placeholder="Pesquisa" x:Name="plPesquisa" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" StyleClass="InputViewFrame">
+                    <StackLayout Orientation="Horizontal">
+                        <ImageButton Source="{OnPlatform UWP='Images/pin.png', Android='pin.png', iOS='pin.png'}"
+                                     Clicked="FocusCidadeEstado"/>
+                        <Entry Placeholder="Cidade/Estado" x:Name="plCidadeEstado" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <Button Grid.Row="1" Grid.Column="1" Text="Pesquisar" CornerRadius="0"/>
+            </Grid>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="0 resultados em " Style="{StaticResource PrimaryLabel}" />
+                        <Span Text="Rio das Ostras, RJ" Style="{StaticResource SecundaryLabel}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Frame HasShadow="True" Margin="2" Style="{StaticResource BorderFrame}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoVisualizer" />
+                </Frame.GestureRecognizers>
+                <Grid RowSpacing="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="Digital Ocean" Grid.ColumnSpan="2" Style="{StaticResource SecundaryLabel}" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="Back-End Developer" Style="{StaticResource PrimaryLabel}" />
+                    <Label Grid.Row="2" Grid.Column="0" Text="Rio das Ostras, RJ" Style="{StaticResource SecundaryLabel}"/>
+                    <Label Grid.Row="3" Grid.Column="0" Text="Tags" Style="{StaticResource PrimaryLabel}" />
+
+                    <Label Grid.Row="1" Grid.Column="1">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="7.000" Style="{StaticResource PrymaryTitleLabel}" />
+                                <Span Text=" - " Style="{StaticResource PrymaryTitleLabel}" />
+                                <Span Text="11.000" Style="{StaticResource PrymaryTitleLabel}" />
+                                <Span Text=" " />
+                                <Span Text="BRL" Style="{StaticResource MoneyLabel}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="3" Grid.Column="1" Style="{StaticResource IdLabel}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="id."/>
+                                <Span Text=" " />
+                                <Span Text="09025" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

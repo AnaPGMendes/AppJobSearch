@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JobSearch.App.Views.Register">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid ColumnSpacing="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="12*"/>
+                </Grid.ColumnDefinitions>
+                <!--<Label Text="⇐" Style="{StaticResource Title}" FontSize="25">-->
+                <Image Source="{OnPlatform UWP='Images/back.png', Android='back.png', iOS='back.png'}"
+                           Style="{StaticResource BackFlag}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ImGoBack" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Jobsearch" Style="{StaticResource Title}" Grid.Column="1"/>
+            </Grid>
+            <BoxView Color="{StaticResource LightPurple}" HeightRequest="1" />
+
+            <Grid VerticalOptions="CenterAndExpand" RowSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" StyleClass="InputViewFrame" BackgroundColor="Transparent">
+                    <Label x:Name="txtMessage" TextColor="Crimson" />
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" StyleClass="InputViewFrame">
+                    <Entry Placeholder="Nome" x:Name="txtName" />
+                </Frame>
+                <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" StyleClass="InputViewFrame">
+                    <Entry Placeholder="E-mail" x:Name="txtEmail" />
+                </Frame>
+                <Frame Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" StyleClass="InputViewFrame"
+                       IsVisible="{OnPlatform Android=True, iOS=True, UWP=False}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry x:Name="txtEntrySenha1" Placeholder="Senha" IsPassword="True"
+                               Grid.Column="0"/>
+                        <CheckBox Grid.Column="1" Color="{StaticResource Purple}" CheckedChanged="CheckBox_CheckedChanged"/>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" StyleClass="InputViewFrame"
+                       IsVisible="{OnPlatform Android=False, iOS=False, UWP=True}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="18*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry x:Name="txtEntrySenha2" Placeholder="Senha" IsPassword="True"
+                               Grid.Column="0"/>
+                        <CheckBox Grid.Column="1" Color="{StaticResource Purple}" CheckedChanged="CheckBox_CheckedChanged"/>
+                        <Label Grid.Column="2" Text="Exibir" Style="{StaticResource ExibirLabel}" />
+                    </Grid>
+                </Frame>
+                <Button Grid.Row="4" Grid.Column="0" Text="Salvar" Clicked="SaveAction" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JobSearch.App.Views.Login">
+    <!--xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             iOS:Page.UseSafeArea="True"  - Tirou a Margin-->
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Jobsearch" Style="{StaticResource Title}" />
+            <BoxView Color="{StaticResource LightPurple}" HeightRequest="1" />
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" StyleClass="InputViewFrame">
+                    <Entry Placeholder="E-mail" x:Name="textEmail"/>
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" StyleClass="InputViewFrame"
+                       IsVisible="{OnPlatform Android=True, iOS=True, UWP=False}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry x:Name="EntrySenha1" Placeholder="Senha" IsPassword="True"
+                               Grid.Column="0"/>
+                        <CheckBox Grid.Column="1" Color="{StaticResource Purple}" CheckedChanged="CheckBox_PasswordIsVisible"/>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" StyleClass="InputViewFrame"
+                       IsVisible="{OnPlatform Android=False, iOS=False, UWP=True}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="18*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry x:Name="EntrySenha2" Placeholder="Senha" IsPassword="True"
+                               Grid.Column="0"/>
+                        <CheckBox Grid.Column="1" Color="{StaticResource Purple}" CheckedChanged="CheckBox_PasswordIsVisible"/>
+                        <Label Grid.Column="2" Text="Exibir" Style="{StaticResource ExibirLabel}" />
+                    </Grid>
+                </Frame>
+                <Button Grid.Row="2" Grid.Column="0" Text="Acessar" Clicked="BtGoStart"/>
+                <Button Grid.Row="2" Grid.Column="1" Text="Cadastrar" Clicked="BtGoRegister" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

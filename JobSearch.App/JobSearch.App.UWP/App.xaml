@@ -4,4 +4,61 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:JobSearch.App.UWP">
 
+    <Application.Resources>
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="ButtonBackground" Color="#623CEA"/>
+            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#5635CD"/>
+            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#4A2DAF"/>
+            
+            <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+
+            <Style x:Key="ImageButtonStyle" TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid x:Name="RootGrid"
+								  Background="{TemplateBinding Background}">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <Storyboard>
+                                                <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="PointerOver">
+                                            <Storyboard>
+                                                <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <ContentPresenter x:Name="ContentPresenter"
+												  BorderBrush="{TemplateBinding BorderBrush}"
+												  BorderThickness="{TemplateBinding BorderThickness}"
+												  Content="{TemplateBinding Content}"
+												  ContentTransitions="{TemplateBinding ContentTransitions}"
+												  ContentTemplate="{TemplateBinding ContentTemplate}"
+												  Padding="{TemplateBinding Padding}"
+												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+												  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+												  AutomationProperties.AccessibilityView="Raw" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

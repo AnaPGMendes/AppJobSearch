@@ -40,6 +40,12 @@ namespace JobSearch.API.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<double>("FinalSalary")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("InitialSalary")
+                        .HasColumnType("REAL");
+
                     b.Property<string>("InterestedSendEmailTo")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -55,9 +61,6 @@ namespace JobSearch.API.Migrations
                     b.Property<DateTime>("PublicationDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<double>("Salary")
-                        .HasColumnType("REAL");
-
                     b.Property<string>("TecnologyTools")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -72,7 +75,7 @@ namespace JobSearch.API.Migrations
                     b.ToTable("Jobs");
                 });
 
-            modelBuilder.Entity("JobSearch.Domain.Models.Users", b =>
+            modelBuilder.Entity("JobSearch.Domain.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,13 +87,11 @@ namespace JobSearch.API.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(6);
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(6);
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -99,7 +100,7 @@ namespace JobSearch.API.Migrations
 
             modelBuilder.Entity("JobSearch.Domain.Models.Job", b =>
                 {
-                    b.HasOne("JobSearch.Domain.Models.Users", "User")
+                    b.HasOne("JobSearch.Domain.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

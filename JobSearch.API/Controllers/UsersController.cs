@@ -21,6 +21,7 @@ namespace JobSearch.API.Controllers
         }
 
         /* http://seusite.com.br/api/Users?email=email@exemplo.com&password=senha123 */
+
         [HttpGet]
         public IActionResult GetUser(string email, string password)
         {

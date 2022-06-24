@@ -10,16 +10,19 @@ namespace JobSearch.Domain.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        [MinLength(6)]
+        [Display (Name="Name", ResourceType =typeof(JobSearch.Domain.Utility.Language.Fields))]
+        [Required(ErrorMessageResourceType =typeof(JobSearch.Domain.Utility.Language.Messages), ErrorMessageResourceName = "MSG_E001")]
+        [MinLength(6, ErrorMessageResourceType =typeof(JobSearch.Domain.Utility.Language.Messages), ErrorMessageResourceName = "MSG_E003")]
         public string Name { get; set; }
 
-        [Required]
+        [Display(Name = "Email", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]
+        [Required(ErrorMessageResourceType = typeof(JobSearch.Domain.Utility.Language.Messages), ErrorMessageResourceName = "MSG_E001")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
-        [MinLength(6)]
+        [Display(Name = "Password", ResourceType = typeof(JobSearch.Domain.Utility.Language.Fields))]
+        [Required(ErrorMessageResourceType = typeof(JobSearch.Domain.Utility.Language.Messages), ErrorMessageResourceName = "MSG_E001")]
+        [MinLength(6, ErrorMessageResourceType = typeof(JobSearch.Domain.Utility.Language.Messages), ErrorMessageResourceName = "MSG_E003")]
         public string Password { get; set; }
     }
 }

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JobSearch.App.Views.RegisterJob">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid ColumnSpacing="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="12*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Style="{StaticResource BackFlag}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ImGoBack" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Grid.Column="1" Text="Jobsearch" Style="{StaticResource Title}"/>
+                <ImageButton Grid.Column="2" Style="{StaticResource SaveFlag}" Clicked="Save"/>
+            </Grid>
+            <BoxView Color="{StaticResource LightPurple}" HeightRequest="1" />
+            <ScrollView>
+                <StackLayout Margin="0, 10,0,0">
+
+                    <Frame StyleClass="InputViewFrame" BackgroundColor="Transparent">
+                        <Label x:Name="txtMessage" TextColor="Crimson" />
+                    </Frame>
+                    <Frame StyleClass="InputViewFrame">
+                        <Entry Placeholder="Empresa" x:Name="txtCompany" />
+                    </Frame>
+
+                    <Frame StyleClass="InputViewFrame">
+                        <Entry Placeholder="Cargo" x:Name="txtJobTitle" />
+                    </Frame>
+
+                    <Frame StyleClass="InputViewFrame">
+                        <Entry Placeholder="Cidade-UF" x:Name="txtCityState" />
+                    </Frame>
+
+                    <Frame StyleClass="InputViewFrame">
+                        <Entry Placeholder="Salário (valor mínimo em reais)" 
+                               x:Name="txtInitialSalary" Keyboard="Numeric"/>
+                    </Frame>
+
+                    <Frame StyleClass="InputViewFrame">
+                        <Entry Placeholder="Salário (valor máximo em reais)" 
+                               x:Name="txtFinalSalary" Keyboard="Numeric"/>
+                    </Frame>
+
+                    <Frame StyleClass="InputViewFrame">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Regime" HorizontalOptions="FillAndExpand" Style="{StaticResource ContractTypeLabel}" />
+                            <RadioButton x:Name="RBCLT"  Text="CLT" IsChecked="True"/>
+                            <RadioButton x:Name="RBPJ" Text="PJ"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame StyleClass="InputViewFrame">
+                        <Entry Placeholder="Tecnologia/Ferramentas" x:Name="txtTecnologyTools" />
+                    </Frame>
+
+                    <Frame StyleClass="InputViewFrame">
+                        <Editor Placeholder="Descrição da Empresa" x:Name="txtCompanyDescription" />
+                    </Frame>
+
+                    <Frame StyleClass="InputViewFrame">
+                        <Editor Placeholder="Descrição do Trabalho" x:Name="txtJobDescription" />
+                    </Frame>
+
+                    <Frame StyleClass="InputViewFrame">
+                        <Editor Placeholder="Benefícios" x:Name="txtBenefits" />
+                    </Frame>
+
+                    <Frame StyleClass="InputViewFrame">
+                        <Entry Placeholder="Interessados enviar E-mail para: " x:Name="txtInterestedSendEmailTo" />
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

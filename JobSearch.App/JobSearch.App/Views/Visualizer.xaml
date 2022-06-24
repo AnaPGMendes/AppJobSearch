@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JobSearch.App.Views.Visualizer">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid ColumnSpacing="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="12*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{OnPlatform UWP='Images/back.png', Android='back.png', iOS='back.png'}"
+                       Grid.Column="0" Style="{StaticResource BackFlag}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ImGoBack" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Grid.Column="1" Text="Jobsearch" Style="{StaticResource Title}"/>
+            </Grid>
+            <BoxView Color="{StaticResource LightPurple}" HeightRequest="1" />
+            <ScrollView>
+                <StackLayout>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Text="Digital Ocean" Style="{StaticResource SecundaryLabel}" />
+                        <Label Grid.Row="1" Grid.Column="0" Text="Back-End Developer"  Style="{StaticResource PrimaryLabel}" />
+                        <Label Grid.Row="2" Grid.Column="0" Text="São Paulo, SP" Style="{StaticResource SecundaryLabel}" />
+                        <Label Grid.Row="3" Grid.Column="0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="7.000" Style="{StaticResource PrymaryTitleLabel}" />
+                                    <Span Text=" - " Style="{StaticResource PrymaryTitleLabel}" />
+                                    <Span Text="11.000" Style="{StaticResource PrymaryTitleLabel}" />
+                                    <Span Text=" " />
+                                    <Span Text="BRL" Style="{StaticResource MoneyLabel}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Grid.Row="4" Grid.Column="0" Text="CLT" Style="{StaticResource PrimaryLabel}"/>
+                        <Label Grid.Row="5" Grid.Column="0" Text="Tags" />
+
+                        <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="End">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Pub." />
+                                    <Span Text=" " />
+                                    <Span Text="07/06/2022" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource IdLabel}">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="id." />
+                                    <Span Text=" " />
+                                    <Span Text="09025" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+
+                    <Label Text="Interessados enviar E-mail para:" Style="{StaticResource PrimaryLabel}" />
+                    <Label Text="job@digitalocean.com.br" Style="{StaticResource SecundaryLabel}" />
+                    <BoxView Color="{StaticResource BluishSnowWhite}" HeightRequest="1" />
+                    <Label Text="Descrição da Empresa" Style="{StaticResource PrymaryTitleLabel}" />
+                    <Label Text="Nullam facilisis vehicula dolor a vehicula. Maecenas ac sapien in magna accumsan commodo. Vestibulum non odio quis nisi scelerisque iaculis. Sed sit amet ante leo. Mauris massa sapien, tincidunt a arcu a, volutpat malesuada nisi. Sed id egestas tortor. Sed vitae tellus laoreet, interdum erat ac, ultrices lectus. Nullam vitae lectus eget orci varius tempor. Duis vitae augue in nunc sollicitudin placerat. Maecenas posueresapien id lectus placerat imperdiet. Donec tempor, turpis ut posuere suscipit, libero massa viverra magna, quis vulputate nisi enim quis nunc. Mauris consectetur velit at porta porttitor." 
+                           Style="{StaticResource PrimaryLabel}" />
+                    <Label Text="Descrição do Trabalho" Style="{StaticResource PrymaryTitleLabel}" />
+                    <Label Text="Vivamus a diam sed ante dapibus bibendum quis ac neque. Sed aliquam venenatis tellus ultrices tempor. Nam ut odio libero. Sed a tincidunt turpis, nec consequat ipsum. Sed nec augue sed justo pellentesque commodo quis vel neque. Ut bibendum non neque vel euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;Pellentesque vel eros tincidunt, placerat magna non, aliquet mauris. Pellentesque consequat ullamcorper risus, sit amet luctus lorem laoreet id. Curabitur faucibus semper maximus."
+                           Style="{StaticResource PrimaryLabel}" />
+                    <BoxView Color="{StaticResource BluishSnowWhite}" HeightRequest="1" />
+                    <Label Text="Benefícios" Style="{StaticResource PrymaryTitleLabel}" />
+                    <Label Text="Texto" Style="{StaticResource PrimaryLabel}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Texto" />
+                                <Span Text="&#10;" />
+                                <Span Text="Texto" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
